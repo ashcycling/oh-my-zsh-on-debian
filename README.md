@@ -12,10 +12,14 @@
 
 # oh-my-zsh-on-debian
 
+Script for auto install and configure oh-my-zsh on debian 13. After installing your zsh will look like this:
+
+![](./img/look.png)
+
 ## How to install script
 
 ```bash
-sh -c "$(curl -fsSL https://github.com/ashcycling/oh-my-zsh-on-debian/raw/refs/heads/main/omzsh.sh)"
+sh -c "$(curl -fsSL https://github.com/ashcycling/oh-my-zsh-on-debian/raw/refs/heads/main/install.sh)"
 ```
 
 ## install zsh
