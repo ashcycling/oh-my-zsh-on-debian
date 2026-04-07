@@ -1,4 +1,5 @@
 - [oh-my-zsh-on-debian](#oh-my-zsh-on-debian)
+  - [How to install script](#how-to-install-script)
   - [install zsh](#install-zsh)
   - [install oh-my-zsh](#install-oh-my-zsh)
   - [Custom .zshrc](#custom-zshrc)
@@ -10,6 +11,12 @@
   - [install powerlevel10k](#install-powerlevel10k)
 
 # oh-my-zsh-on-debian
+
+## How to install script
+
+```bash
+sh -c "$(curl -fsSL https://github.com/ashcycling/oh-my-zsh-on-debian/raw/refs/heads/main/omzsh.sh)"
+```
 
 ## install zsh
 
