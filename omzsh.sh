@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y zsh fontconfig
+sudo apt install -y zsh fontconfig git
 mkdir -p ~/.local/share/fonts
 curl -L -o ~/.local/share/fonts/MesloLGS_NF_Regular.ttf  https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
 curl -L -o ~/.local/share/fonts/MesloLGS_NF_Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
