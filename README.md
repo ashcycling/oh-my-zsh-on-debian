@@ -1,5 +1,18 @@
 # oh-my-zsh-on-debian
 
+## install zsh
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+sudo apt install -y zsh
+
+## install oh-my-zsh
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
 ## Custom .zshrc
 
 ```bash
