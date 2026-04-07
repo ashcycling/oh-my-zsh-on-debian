@@ -1,3 +1,14 @@
+- [oh-my-zsh-on-debian](#oh-my-zsh-on-debian)
+  - [install zsh](#install-zsh)
+  - [install oh-my-zsh](#install-oh-my-zsh)
+  - [Custom .zshrc](#custom-zshrc)
+  - [Errors after zsh install and adding custom .zshrc](#errors-after-zsh-install-and-adding-custom-zshrc)
+  - [install fzf-tab](#install-fzf-tab)
+  - [install zsh-autosuggestions](#install-zsh-autosuggestions)
+  - [install zsh-syntax-highlighting](#install-zsh-syntax-highlighting)
+  - [install fonts for powerlevel10k](#install-fonts-for-powerlevel10k)
+  - [install powerlevel10k](#install-powerlevel10k)
+
 # oh-my-zsh-on-debian
 
 ## install zsh
