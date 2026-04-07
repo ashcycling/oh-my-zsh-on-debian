@@ -19,7 +19,7 @@ Script for auto install and configure oh-my-zsh on debian 13. After installing y
 ## How to install script
 
 ```bash
-sh -c "$(curl -fsSL https://github.com/ashcycling/oh-my-zsh-on-debian/raw/refs/heads/main/install.sh)"
+sh -c "$(curl -fsSL https://github.com/ashcycling/oh-my-zsh-on-debian/raw/refs/heads/main/tools/install.sh)"
 ```
 
 ## install zsh
