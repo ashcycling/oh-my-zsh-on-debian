@@ -127,7 +127,7 @@
   [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 ```
 
-## Errors after zsh instal and adding custom .zshrc
+## Errors after zsh install and adding custom .zshrc
 
 ```bash
 zsh
@@ -141,7 +141,8 @@ zsh
 ## install fzf-tab
 
 ```bash
-sudo apt install fzf
+# ???? sudo apt install fzf
+git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 ```
 
 ## install zsh-autosuggestions
@@ -149,3 +150,10 @@ sudo apt install fzf
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
+
+## zsh-syntax-highlighting
+
+```bash
+sudo apt install -y zsh-syntax-highlighting
+```
+
