@@ -29,6 +29,8 @@ if [ "$OS_TYPE" = "Linux" ]; then
             version=$(lsb_release -rs)
             if $versin == "25.10"; then
                 echo "Your Ubuntu version is: $version"
+            fi
+        fi
     else
         echo "Could not find /etc/os-release"
     fi
