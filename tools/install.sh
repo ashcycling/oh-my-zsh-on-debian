@@ -1,3 +1,4 @@
+#!/bin/bash
 # sudo apt update 
 # sudo apt upgrade -y -qq
 # sudo apt install zsh fontconfig git fzf -y -qq
@@ -65,7 +66,7 @@ if [ "$OS_TYPE" = "Linux" ]; then
         curl -fLso ~/.local/share/fonts/"${font//%20/ }" "$FONT_URL/$font"
     done
 
-    fc-cache -f > /dev/null
+    fc-cache -f -v > /dev/null
 
     echo " ✅ done"
     echo " 🏎️ Installing Oh My Zsh"
