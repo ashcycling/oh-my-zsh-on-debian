@@ -25,9 +25,9 @@ if [ "$OS_TYPE" = "Linux" ]; then
         . /etc/os-release
         echo "OS Name: $NAME"
         echo "ID: $ID" # e.g., ubuntu, fedora, arch
-        if $NAME == "Ubuntu"; then
+        if [ "$ID" = "ubuntu" ]; then
             version=$(lsb_release -rs)
-            if $versin == "25.10"; then
+            if [ "$version" = "25.10" ]; then
                 echo "Your Ubuntu version is: $version"
             fi
         fi
