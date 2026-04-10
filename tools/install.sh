@@ -83,6 +83,8 @@ if [ "$OS_TYPE" = "Linux" ]; then
     curl -fsSL -o ~/.p10k.zsh https://raw.githubusercontent.com/ashcycling/oh-my-zsh-on-debian/refs/heads/main/config/.p10k.zsh
     curl -fsSL -o ~/.zshrc https://raw.githubusercontent.com/ashcycling/oh-my-zsh-on-debian/refs/heads/main/config/.zshrc
     echo " ✅ done"
+    echo " 🎉   Installation complete! Running zsh"
+    exec zsh
     else
         echo " 🚨   Could not find /etc/os-release"
     fi
@@ -90,6 +92,4 @@ elif [ "$OS_TYPE" = "Darwin" ]; then
     echo " 💻 This is macOS."
 fi
 
-echo " 🎉   Installation complete! Running zsh"
-exec zsh
 
