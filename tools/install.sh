@@ -1,7 +1,7 @@
 #!/bin/bash
-# sudo apt update 
-# sudo apt upgrade -y -qq
-# sudo apt install zsh fontconfig git fzf -y -qq
+# sudo apt-get update 
+# sudo apt-get upgrade -y -qq
+# sudo apt-get install zsh fontconfig git fzf -y -qq
 # mkdir -p ~/.local/share/fonts
 # curl -L -o ~/.local/share/fonts/MesloLGS_NF_Regular.ttf  https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
 # curl -L -o ~/.local/share/fonts/MesloLGS_NF_Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
@@ -30,21 +30,21 @@ if [ "$OS_TYPE" = "Linux" ]; then
             exit 1
         fi
         echo " 🏎️ Updating package lists and upgrading existing packages..."
-        sudo apt update -qq > /dev/null
-        sudo apt upgrade -y -qq > /dev/null
+        sudo apt-get update -qq > /dev/null
+        sudo apt-get upgrade -y -qq > /dev/null
         echo " ✅ done"
         if [ "$ID" = "ubuntu" ]; then
             version=$(lsb_release -rs)
             if [ "$version" = "25.10" ]; then
                 echo " 🪳 Your Ubuntu version is: $version with bug: https://github.com/Aloxaf/fzf-tab/issues/549"
                 echo " 💉 Installing workaround for fzf-tab plugin..."
-                sudo apt install coreutils-from-gnu coreutils-from-uutils- --allow-remove-essential -y > /dev/null
+                sudo apt-get install coreutils-from-gnu coreutils-from-uutils- --allow-remove-essential -y > /dev/null
                 echo " ✅ done"
-                # -o APT::Get::Assume-Yes=true -o APT::Get::force-yes=true
+                # -o APT-get::Get::Assume-Yes=true -o APT-get::Get::force-yes=true
             fi
         fi
     echo " 🏎️ Installing Zsh, Fontconfig, Git, and FZF..."
-    sudo apt install zsh fontconfig git fzf -y -qq
+    sudo apt-get install zsh fontconfig git fzf -y -qq
     echo " ✅ done"
     echo " 🏎️ Installing MesloLGS NF fonts..."
     mkdir -p ~/.local/share/fonts > /dev/null
