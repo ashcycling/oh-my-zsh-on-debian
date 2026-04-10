@@ -27,8 +27,8 @@ if [ "$OS_TYPE" = "Linux" ]; then
         echo "ID: $ID" # e.g., ubuntu, fedora, arch
         if $NAME == "Ubuntu"; then
             version=$(lsb_release -rs)
-            if $versin == "25.10"
-            echo "Your Ubuntu version is: $version"
+            if $versin == "25.10"; then
+                echo "Your Ubuntu version is: $version"
     else
         echo "Could not find /etc/os-release"
     fi
