@@ -79,8 +79,8 @@ if [ "$OS_TYPE" = "Linux" ]; then
     git clone -q --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" > /dev/null
     echo " ✅ done"
     echo " 🏎️ Downloading configs for p10k and oh-my-zsh"
-    curl -L -o -q ~/.p10k.zsh https://raw.githubusercontent.com/ashcycling/oh-my-zsh-on-debian/refs/heads/main/config/.p10k.zsh
-    curl -L -o -q ~/.zshrc https://raw.githubusercontent.com/ashcycling/oh-my-zsh-on-debian/refs/heads/main/config/.zshrc
+    curl -fsSL -o ~/.p10k.zsh https://raw.githubusercontent.com/ashcycling/oh-my-zsh-on-debian/refs/heads/main/config/.p10k.zsh
+    curl -fsSL -o ~/.zshrc https://raw.githubusercontent.com/ashcycling/oh-my-zsh-on-debian/refs/heads/main/config/.zshrc
     echo " ✅ done"
     else
         echo " 🚨 Could not find /etc/os-release"
