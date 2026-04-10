@@ -28,14 +28,14 @@ if [ "$OS_TYPE" = "Linux" ]; then
             echo "This script is designed for Debian-based distributions. Exiting."
             exit 1
         fi
-        sudo apt update 
+        sudo apt update -qq
         sudo apt upgrade -y -qq
         if [ "$ID" = "ubuntu" ]; then
             version=$(lsb_release -rs)
             if [ "$version" = "25.10" ]; then
                 echo "🪳 Your Ubuntu version is: $version with bug: https://github.com/Aloxaf/fzf-tab/issues/549"
                 echo "💉 Installing workaround for fzf-tab plugin..."
-                sudo apt install coreutils-from-gnu coreutils-from-uutils- --allow-remove-essential
+                sudo apt install coreutils-from-gnu coreutils-from-uutils- --allow-remove-essential -y -qq
             fi
         fi
     sudo apt install zsh fontconfig git -y -qq
