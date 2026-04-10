@@ -35,7 +35,8 @@ if [ "$OS_TYPE" = "Linux" ]; then
             if [ "$version" = "25.10" ]; then
                 echo "🪳 Your Ubuntu version is: $version with bug: https://github.com/Aloxaf/fzf-tab/issues/549"
                 echo "💉 Installing workaround for fzf-tab plugin..."
-                sudo apt install coreutils-from-gnu coreutils-from-uutils- --allow-remove-essential -y -qq -o APT::Get::Assume-Yes=true -o APT::Get::force-yes=true
+                sudo apt install coreutils-from-gnu coreutils-from-uutils- --allow-remove-essential -y
+                # -o APT::Get::Assume-Yes=true -o APT::Get::force-yes=true
             fi
         fi
     sudo apt install zsh fontconfig git -y -qq
