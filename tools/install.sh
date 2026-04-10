@@ -47,25 +47,40 @@ if [ "$OS_TYPE" = "Linux" ]; then
     echo " ✅ done"
     echo " 🏎️ Installing MesloLGS NF fonts..."
     mkdir -p ~/.local/share/fonts > /dev/null
-    curl -L -o ~/.local/share/fonts/MesloLGS_NF_Regular.ttf  https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf > /dev/null
-    curl -L -o ~/.local/share/fonts/MesloLGS_NF_Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf > /dev/null
-    curl -L -o ~/.local/share/fonts/MesloLGS_NF_Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf > /dev/null
-    curl -L -o ~/.local/share/fonts/MesloLGS_NF_Bold_Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf > /dev/null
-    fc-cache -f -v > /dev/null
+    # curl -L -o ~/.local/share/fonts/MesloLGS_NF_Regular.ttf  https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf > /dev/null
+    # curl -L -o ~/.local/share/fonts/MesloLGS_NF_Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf > /dev/null
+    # curl -L -o ~/.local/share/fonts/MesloLGS_NF_Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf > /dev/null
+    # curl -L -o ~/.local/share/fonts/MesloLGS_NF_Bold_Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf > /dev/null
+    # fc-cache -f -v > /dev/null
+
+    FONT_URL="https://github.com/romkatv/powerlevel10k-media/raw/master"
+    FONTS=(
+        "MesloLGS%20NF%20Regular.ttf"
+        "MesloLGS%20NF%20Bold.ttf"
+        "MesloLGS%20NF%20Italic.ttf"
+        "MesloLGS%20NF%20Bold%20Italic.ttf"
+    )
+
+    for font in "${FONTS[@]}"; do
+        curl -fLso ~/.local/share/fonts/"${font//%20/ }" "$FONT_URL/$font"
+    done
+
+    fc-cache -f > /dev/null
+
     echo " ✅ done"
     echo " 🏎️ Installing Oh My Zsh"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended > /dev/null
     # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     echo " ✅ done"
     echo " 🏎️ Installing Oh My Zsh plugins and themes..."
-    git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab > /dev/null
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions > /dev/null
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting > /dev/null
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" > /dev/null
+    git clone -q https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab > /dev/null
+    git clone -q https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions > /dev/null
+    git clone -q https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting > /dev/null
+    git clone -q --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" > /dev/null
     echo " ✅ done"
     echo " 🏎️ Downloading configs for p10k and oh-my-zsh"
-    curl -L -o ~/.p10k.zsh https://raw.githubusercontent.com/ashcycling/oh-my-zsh-on-debian/refs/heads/main/config/.p10k.zsh
-    curl -L -o ~/.zshrc https://raw.githubusercontent.com/ashcycling/oh-my-zsh-on-debian/refs/heads/main/config/.zshrc
+    curl -L -o -q ~/.p10k.zsh https://raw.githubusercontent.com/ashcycling/oh-my-zsh-on-debian/refs/heads/main/config/.p10k.zsh
+    curl -L -o -q ~/.zshrc https://raw.githubusercontent.com/ashcycling/oh-my-zsh-on-debian/refs/heads/main/config/.zshrc
     echo " ✅ done"
     else
         echo " 🚨 Could not find /etc/os-release"
