@@ -24,7 +24,7 @@ if [ "$OS_TYPE" = "Linux" ]; then
         # Load the distribution data
         . /etc/os-release
         # echo "OS Name: $NAME"
-        echo " 🖥️ ID: $ID" # e.g., ubuntu, fedora, arch
+        echo " 🖥️   ID: $ID" # e.g., ubuntu, fedora, arch
         if [ "$ID" != "ubuntu" ] && [ "$ID" != "debian" ]; then
             echo " 🚨   This script is designed for Debian-based distributions. Exiting."
             exit 1
