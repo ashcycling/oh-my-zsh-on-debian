@@ -89,7 +89,7 @@ if [ "$OS_TYPE" = "Linux" ]; then
         echo " 🚨   Could not find /etc/os-release"
     fi
 elif [ "$OS_TYPE" = "Darwin" ]; then
-    echo " 💻 This is macOS."
+    echo " 💻   This is macOS."
 fi
 
 
