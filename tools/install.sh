@@ -55,14 +55,9 @@ if [ "$OS_TYPE" = "Linux" ]; then
     # fc-cache -f -v > /dev/null
 
     FONT_URL="https://github.com/romkatv/powerlevel10k-media/raw/master"
-    FONTS=(
-        "MesloLGS%20NF%20Regular.ttf"
-        "MesloLGS%20NF%20Bold.ttf"
-        "MesloLGS%20NF%20Italic.ttf"
-        "MesloLGS%20NF%20Bold%20Italic.ttf"
-    )
+    FONTS="MesloLGS%20NF%20Regular.ttf MesloLGS%20NF%20Bold.ttf MesloLGS%20NF%20Italic.ttf MesloLGS%20NF%20Bold%20Italic.ttf"
 
-    for font in "${FONTS[@]}"; do
+    for font in $FONTS; do
         curl -fLso ~/.local/share/fonts/"${font//%20/ }" "$FONT_URL/$font"
     done
 
