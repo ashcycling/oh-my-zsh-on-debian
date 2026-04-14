@@ -43,6 +43,11 @@ if [ "$OS_TYPE" = "Linux" ]; then
                 # -o APT-get::Get::Assume-Yes=true -o APT-get::Get::force-yes=true
             fi
         fi
+        if [ "$ID" = "astra" ]; then
+            echo " 🪳 Your Astra Linux version is: $VERSION_ID has no fzf package available."
+                echo " 💉 Installing fzf from source as a workaround..."
+                curl -LO 
+        fi
     echo " 🏎️   Installing Zsh, Fontconfig, Git, and FZF..."
     sudo apt-get install curl zsh fontconfig git fzf -y -qq >/dev/null 2>&1
     echo " ✅ done"
