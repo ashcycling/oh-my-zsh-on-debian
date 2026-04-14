@@ -46,7 +46,7 @@ if [ "$OS_TYPE" = "Linux" ]; then
         if [ "$ID" = "astra" ]; then
             echo " 🪳 Your Astra Linux version is: $VERSION_ID has no fzf package available."
                 echo " 💉 Installing fzf from source as a workaround..."
-                curl -LO 
+                sh -c "$(curl -fsSL https://raw.githubusercontent.com/ashcycling/oh-my-zsh-on-debian/refs/heads/main/tools/fzf.sh)"
         fi
     echo " 🏎️   Installing Zsh, Fontconfig, Git, and FZF..."
     sudo apt-get install curl zsh fontconfig git fzf -y -qq >/dev/null 2>&1

@@ -7,7 +7,7 @@
 fzf_ver=$(curl  "https://api.github.com/repos/junegunn/fzf/tags" | jq -r '.[0].name')
 echo $fzf_ver
 curl -LO https://github.com/junegunn/fzf/releases/download/$fzf_ver/fzf-$fzf_ver-linux_amd64.tar.gz
-tar -xzf fzf-$fzf_ver-linux_amd64.tar.gz
+tar -xvf fzf-$fzf_ver-linux_amd64.tar.gz
 sudo mv fzf /usr/local/bin/fzf --version
 rm fzf-$fzf_ver-linux_amd64.tar.gz
 # curl -LO https://deckhouse.ru/downloads/deckhouse-cli/$d8_ver/d8-$d8_ver-darwin-arm64.tar.gz
