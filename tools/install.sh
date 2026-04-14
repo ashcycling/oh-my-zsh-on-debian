@@ -44,7 +44,7 @@ if [ "$OS_TYPE" = "Linux" ]; then
             fi
         fi
     echo " 🏎️   Installing Zsh, Fontconfig, Git, and FZF..."
-    sudo apt-get install zsh fontconfig git fzf -y -qq >/dev/null 2>&1
+    sudo apt-get install curl zsh fontconfig git fzf -y -qq >/dev/null 2>&1
     echo " ✅ done"
     echo " 🏎️   Installing MesloLGS NF fonts..."
     mkdir -p ~/.local/share/fonts > /dev/null
