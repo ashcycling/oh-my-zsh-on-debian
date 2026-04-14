@@ -45,11 +45,16 @@ if [ "$OS_TYPE" = "Linux" ]; then
         fi
         if [ "$ID" = "astra" ]; then
             echo " 🪳 Your Astra Linux version is: $VERSION_ID has no fzf package available."
-                echo " 💉 Installing fzf from source as a workaround..."
-                sh -c "$(curl -fsSL https://raw.githubusercontent.com/ashcycling/oh-my-zsh-on-debian/refs/heads/main/tools/fzf.sh)"
+            echo " 💉 Installing fzf from source as a workaround..."
+            sh -c "$(curl -fsSL https://raw.githubusercontent.com/ashcycling/oh-my-zsh-on-debian/refs/heads/main/tools/fzf.sh)"
+        fi
+        if [ "$ID" = "debian" ] || [ "$ID" = "ubuntu" ]; then
+            echo " 🏎️   Installing FZF..."
+            sudo apt-get install fzf -y -qq >/dev/null 2>&1
+            echo " ✅ done"
         fi
     echo " 🏎️   Installing Zsh, Fontconfig, Git, and FZF..."
-    sudo apt-get install curl zsh fontconfig git fzf -y -qq >/dev/null 2>&1
+    sudo apt-get install zsh fontconfig git fzf -y -qq >/dev/null 2>&1
     echo " ✅ done"
     echo " 🏎️   Installing MesloLGS NF fonts..."
     mkdir -p ~/.local/share/fonts > /dev/null
