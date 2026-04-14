@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # sudo apt-get update 
 # sudo apt-get upgrade -y -qq
 # sudo apt-get install zsh fontconfig git fzf -y -qq
