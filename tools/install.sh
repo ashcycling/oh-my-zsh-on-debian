@@ -58,7 +58,8 @@ if [ "$OS_TYPE" = "Linux" ]; then
     FONTS="MesloLGS%20NF%20Regular.ttf MesloLGS%20NF%20Bold.ttf MesloLGS%20NF%20Italic.ttf MesloLGS%20NF%20Bold%20Italic.ttf"
 
     for font in $FONTS; do
-        curl -fLso ~/.local/share/fonts/"${font//%20/ }" "$FONT_URL/$font"
+        filename=$(echo "$font" | sed 's/%20/ /g')
+        curl -fLso ~/.local/share/fonts/"$filename" "$FONT_URL/$font"
     done
 
     fc-cache -f -v > /dev/null
