@@ -25,7 +25,7 @@ if [ "$OS_TYPE" = "Linux" ]; then
         . /etc/os-release
         # echo "OS Name: $NAME"
         echo " 🖥️   ID: $ID" # e.g., ubuntu, fedora, arch
-        if [ "$ID" != "ubuntu" ] && [ "$ID" != "debian" ]; then
+        if [ "$ID" != "ubuntu" ] && [ "$ID" != "debian" ] && [ "$ID" != "astra" ]; then
             echo " 🚨   This script is designed for Debian-based distributions. Exiting."
             exit 1
         fi
